@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ('../includes/head.ejs')%>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/addDesign.css" />
+  </head>
+  <body>
+    <%- include ('../includes/nav.ejs')%>
+    <!-- main container -->
+    <section class="DAD_main_sction_color">
+      <% if (hasError) { %>
+      <div class="DL_form_errors">
+        <small class="DL_error"><%= errorMessage %></small>
+      </div>
+      <% } %>
+      <!-- content container -->
+      <div class="DAD_main_container">
+        <!-- main heading -->
+        <h1 class="DAD_start_a_new_project">Upload A New Artwork</h1>
+        <!-- form -->
+        <form
+          method="POST"
+          action="/designer/addDesign"
+          enctype="multipart/form-data"
+          class="DAD_form"
+        >
+          <!-- name of design div -->
+          <div class="DAD_design_name">
+            <label for="name">What's your Design title?</label>
+            <input
+              type="text"
+              name="title"
+              placeholder="Type your design title"
+              value="<% if (hasError) { %><%= design.title %><% } %>"
+              required
+            />
+          </div>
+          <!-- price of design div -->
+          <div class="DAD_design_price">
+            <label for="price">What's your Design price?</label>
+            <input
+              type="number"
+              name="price"
+              placeholder="Type a Number"
+              step="0.01"
+              value="<% if (hasError) { %><%= design.price %><% } %>"
+              required
+            />
+          </div>
+          <!-- select photo / color of t-shirt / catigory -->
+          <div class="DAD_selections">
+            <!-- upload img elements -->
+            <div class="DAD_file-input">
+              <!-- upload img input -->
+              <input
+                type="file"
+                id="DAD_file"
+                name="image"
+                required
+                class="DAD_file"
+              />
+              <!-- upload img label -->
+              <label for="DAD_file">
+                Upload IMG
+                <!-- where the name of file is going to be -->
+                <p class="DAD_file-name"></p>
+              </label>
+            </div>
+            <!-- select type of designs (catigory) -->
+            <div class="DAD_catigory_select">
+              <label for="DAD_catigory_select">Choose Design Catigory : </label>
+              <select name="catigory" id="DAD_catigory_select" size="1">
+                <option value="nature">Nature</option>
+                <option value="beauty">Beauty</option>
+                <option value="action">Action</option>
+                <option value="love">Love</option>
+                <option value="personal">Personal</option>
+                <option value="icons">Icons</option>
+                <option value="animals">Animals</option>
+                <option value="birds">Birds</option>
+                <option value="dessert">Dessert</option>
+              </select>
+            </div>
+            <!-- DAD_colors_select -->
+            <div class="DAD_colors_select">
+              <label for="DAD_colors_select">Select T-shirt Color : </label>
+              <select name="tshirtColor" id="DAD_colors_select">
+                <option value="red" class="DAD_red_color" style="--i: red">
+                  RED
+                </option>
+                <option value="blue" class="DAD_blue_color" style="--i: blue">
+                  BLUE
+                </option>
+                <option
+                  value="yellow"
+                  class="DAD_yellow_color"
+                  style="--i: yellow"
+                >
+                  YELLOW
+                </option>
+                <option
+                  value="black"
+                  class="DAD_black_color"
+                  style="--i: black"
+                >
+                  BLACK
+                </option>
+                <option
+                  value="white"
+                  class="DAD_white_color"
+                  style="--i: white"
+                >
+                  WHITE
+                </option>
+                <option
+                  value="armyGreen "
+                  class="DAD_armyGreen_color"
+                  style="--i: #4b5320"
+                >
+                  armyGreen
+                </option>
+                <option
+                  value="navy "
+                  class="DAD_navy_color"
+                  style="--i: #000080"
+                >
+                  navy
+                </option>
+                <option
+                  value="darkgray"
+                  class="DAD_darkgray_color"
+                  style="--i: darkgray"
+                >
+                  darkgray
+                </option>
+                <option
+                  value="lightblue"
+                  class="DAD_lightblue_color"
+                  style="--i: lightblue"
+                >
+                  lightblue
+                </option>
+              </select>
+            </div>
+          </div>
+          <!-- description -->
+          <div class="DAD_description">
+            <label for="DAD_description">Your Description : </label>
+            <textarea
+              name="description"
+              required
+              id="DAD_description"
+              cols="30"
+              rows="10"
+              placeholder="Tell us About Your Design"
+            >
+<% if (hasError) { %><%= design.description %><% } %></textarea
+            >
+          </div>
+          <div class="DAD_publish">
+            <div class="DAD_center">
+              <label for="publish to market">Publish to Market</label>
+              <input type="checkbox" name="published" id="checkStat" />
+            </div>
+            <p>
+              Note: Check publish to market checkbox or your design will appear
+              only on your dash-board.
+            </p>
+          </div>
+          <!-- submit btn -->
+          <div class="DAD_submit_center">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+            <button type="submit" class="DAD_submit">Upload</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script src="/js/addDesign.js"></script>
+    <script src="/js/main.js"></script>
+    <%- include ('../includes/end.ejs')%>
+  </body>
+</html>

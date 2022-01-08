@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include ('../includes/head.ejs')%>
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <%-include ('../includes/nav.ejs')%>
+    <!-- main section whtch contains everys thing and img cover -->
+    <section class="DL_main">
+      <!-- overlay "black" -->
+      <div class="DL_overlay">
+        <!-- Home icon -->
+        <div class="DL_home_icon">
+          <a href="/"><img src="img/icon/home.svg" alt="Hous_icon" /></a>
+        </div>
+        <!-- bottom part -->
+        <div class="DL_box_content">
+          <!-- question -->
+          <h1 class="DL_question">
+            Login as a : <span id="DL_usertype">Customer</span>
+          </h1>
+          <!-- forms part -->
+          <div class="DL_forms_content">
+            <!-- icons to translate to forms -->
+            <span class="DL_designer_btn DL_left DL_active" id="DL_btn_customer"
+              >Customer</span
+            >
+            <span class="DL_designer_btn DL_right" id="DL_btn_designer"
+              >Designer</span
+            >
+            <!-- forms overlay to hide the another form -->
+            <div class="DL_forms_overlay">
+              <!-- forms start -->
+              <!-- customer form -->
+              <form
+                action="/clientLogin"
+                method="POST"
+                novalidate
+                class="DL_customer_form"
+                id="DL_form_customer"
+              >
+                <!-- errors place -->
+                <% if (hasError && isClient) { %>
+                <div class="DL_form_errors">
+                  <small class="DL_error"><%= errorMessage %></small>
+                </div>
+                <% } %>
+                <input
+                  class="DL_username"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value="<% if (hasError && isClient) { %><%= oldInput.oldEmail %><% } %>"
+                  required
+                />
+                <input
+                  class="DL_password"
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  value="<% if (hasError && isClient) { %><%= oldInput.oldPassword %><% } %>"
+                />
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                <button class="DL_submit" type="submit">Login</button>
+                <a href="/register" class="DL_register"
+                  ><small>Don’t have an account!</small></a
+                >
+                <a href="/reset/1" class="DL_register"
+                  ><small>Forgot your password?!</small></a
+                >
+              </form>
+              <!-- designer form -->
+              <form
+                action="/designerLogin"
+                method="POST"
+                novalidate
+                class="DL_designer_form"
+                id="DL_form_designer"
+              >
+                <% if (hasError && isDesigner) { %>
+                <div class="DL_form_errors">
+                  <small class="DL_error"><%= errorMessage %></small>
+                </div>
+                <% } %>
+                <input
+                  class="DL_username"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value="<% if (hasError && isDesigner) { %><%= oldInput.oldEmail %><% } %>"
+                  required
+                />
+                <input
+                  class="DL_password"
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  value="<% if (hasError && isDesigner) { %><%= oldInput.oldPassword %><% } %>"
+                />
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                <button class="DL_submit" type="submit">Login</button>
+                <a href="/register" class="DL_register"
+                  ><small>Don’t have an account!</small></a
+                >
+                <a href="/reset/2" class="DL_register"
+                  ><small>Forgot your password?!</small></a
+                >
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/login.js"></script>
+    <%-include ('../includes/end.ejs')%>
+  </body>
+</html>

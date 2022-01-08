@@ -1,0 +1,127 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #eeeeee;
+  width: 100vw; }
+
+.main-container {
+  max-width: 80rem;
+  margin: 10rem auto 0;
+  padding: 1rem; }
+  .main-container main {
+    background-color: white;
+    padding: 1.5rem; }
+
+.heading {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 2rem; }
+
+.artwork {
+  font-size: 2rem;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1rem; }
+  .artwork_p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem; }
+  .artwork_Specifications {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1rem; }
+  .artwork_tips, .artwork_Sizing {
+    padding-left: 4rem;
+    margin-bottom: 2rem; }
+    .artwork_tips li, .artwork_tips p, .artwork_Sizing li, .artwork_Sizing p {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: .7rem; }
+  .artwork_Sizing-heading {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1rem; }
+
+.img1 {
+  max-width: 40rem; }
+
+.row-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 1rem 0; }
+
+.img-full {
+  max-width: 100%;
+  width: 100%; }
+
+.part3,
+.print,
+.resolution,
+.colors,
+.text {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1rem; }
+  .part3_p,
+  .print_p,
+  .resolution_p,
+  .colors_p,
+  .text_p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: .7rem; }
+
+.row-flex_item,
+.row-flex_item2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: .7rem;
+  margin-bottom: 2.5rem;
+  min-width: 329px; }
+
+.start_p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: .7rem; }
+
+.row-flex2 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+
+.productTips {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem; }
+
+@media (max-width: 740px) {
+  .row-flex,
+  .row-flex2 {
+    justify-content: center; }
+  .row-flex_item,
+  .row-flex_item2 {
+    text-align: center; } }
+
+@media (max-width: 400px) {
+  .img1 {
+    width: 100%; }
+  .row-flex_item img,
+  .row-flex_item2 img {
+    width: 90% !important;
+    max-width: 90%; }
+  #img1,
+  #img2 {
+    width: 75% !important; }
+  .main-container {
+    max-width: 95%;
+    width: 95%; } }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/cart.css" />
+  </head>
+  <body>
+    <!-- navbar place -->
+    <%- include('../includes/nav.ejs') %>
+    <!-- end navbar place -->
+    <!-- container to make the max-width 1140px and center the content -->
+    <div class="main-container">
+      <main>
+        <!-- heading -->
+        <h1 class="main_title">Your Order contains :</h1>
+        <!-- container for flex -->
+        <div class="items-container">
+          <!-- item -->
+          <% designs.forEach(d => { %>
+          <div class="item">
+            <!-- card itself -->
+            <div class="item_card">
+              <!-- design img -->
+              <img
+                src="<%= d.designId.imagePath%>"
+                alt="design"
+                class="item_card-img"
+              />
+              <!-- overlay which contains all data -->
+              <div class="item_card-overlay">
+                <!-- price -->
+                <div class="item_card-overlay--price">
+                  <%= d.designId.price %>$
+                </div>
+                <!-- design name -->
+                <h2 class="item_card-overlay--name"><%= d.designId.title %></h2>
+                <!-- design remove btn -->
+              </div>
+            </div>
+          </div>
+          <% }) %>
+          <!-- ORDER NOW BTN -->
+        </main>
+        <h1 class="main_title">Total Price: <%= totalSum %> $</h1>
+      <div>
+        <button id="order" class="order">Order</button>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script>
+          const stripe = Stripe(
+            "pk_test_51HfswkEOhvYlT1YsPVbr5rbLsshyiYvGXcfrjzY8JRSrC7vFtj27SZoD5yHE2A1th2HH8lR4Ne53ouykAjyvcCix00WTDDMFkx"
+          );
+          const orderBtn = document.getElementById("order");
+          orderBtn.addEventListener("click", () => {
+            stripe.redirectToCheckout({
+              sessionId: "<%= sessionId %>",
+            });
+          });
+        </script>
+      </div>
+    </div>
+    <%- include('../includes/end.ejs') %>
+  </body>
+</html>

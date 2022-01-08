@@ -1,0 +1,36 @@
+:root{
+    --White: #ffffff;
+    --Black: #000000;
+    --Home_Dark_Green: #5EBC5C;
+    --Home_Light_Green: #B5EEB3;
+    /* login part */
+    --DL_Green: #A8F387;
+    --DL_border: #c4c4c4;
+    --DL_placeholder: #8d8d8d;
+    --DL_btn_color1: #16D6FA;
+    --DL_btn_color2: #AF87CE;
+    --DL_danger: #EA1A7F;
+    /* dashboard part */
+    --DD_active: #0BFF06;
+    --DD_not_active: #FF2E00;
+    --DD_price: #FEC603;
+    /* user informatoin */
+    --DUI_container: #171717;
+    --DUI_text_color: #505050;
+    --DUI_border_color: #303030;
+    --DUI_btn_color: #51B62E;
+    /* Add design colors */
+    --DAD_container: #090909;
+    --DAD_border: #111111;
+    --DAD_select: #C4C4C4;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a,
+a:focus,
+a:active{
+    text-decoration: none;
+}

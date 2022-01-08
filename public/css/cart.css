@@ -1,0 +1,206 @@
+.item {
+  width: 33.33%;
+  height: 22rem;
+  margin-bottom: 4rem;
+}
+.item_card {
+  max-width: 350px;
+  width: 80%;
+  height: 100%;
+  margin-left: auto;
+  position: relative;
+}
+.item_card-img {
+  width: 100%;
+  height: 100%;
+}
+.item_card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 33, 37, 0.65);
+  text-align: left;
+}
+.item_card-overlay--price {
+  background-color: #27272c;
+  padding: 1rem 1.5rem;
+  color: #ffa800;
+  font-size: 2.5rem;
+  font-weight: 200;
+  display: inline-block;
+}
+.item_card-overlay--name {
+  background-color: #27272c;
+  text-align: center;
+  padding: 1rem;
+  width: 11rem;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  font-weight: 200;
+  font-size: 2rem;
+  color: #ffffff;
+  position: absolute;
+  top: 30%;
+  left: -20%;
+}
+.item_card-overlay--remove {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #212125;
+  width: 70px;
+  height: 70px;
+  border-top-left-radius: 100%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: background-color 0.4s ease-in-out;
+  -o-transition: background-color 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
+  border: none;
+  outline: none;
+}
+.item_card-overlay--remove img {
+  width: 45px;
+  height: 45px;
+  margin: 2rem 0 0 2rem;
+}
+.item_card-overlay--remove:hover {
+  background-color: #ffffff;
+}
+
+.order-now {
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.order-now:link,
+.order-now:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #212125;
+  padding: 1rem 2rem;
+  border: 1px solid #212125;
+  font-size: 2rem;
+}
+.order-now:hover,
+.order-now:focus {
+  outline: 0;
+  background-color: #212125;
+  color: #ffa800;
+}
+.order-now:hover {
+  -webkit-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  -webkit-box-shadow: 0 0.5rem 1rem #212125;
+  box-shadow: 0 0.5rem 1rem #212125;
+}
+.order-now:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-box-shadow: 0 0.5rem 0.75rem #212125;
+  box-shadow: 0 0.5rem 0.75rem #212125;
+}
+.order {
+  width: 100px;
+  height: 50px;
+  font-size: 2.7rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.order:link,
+.order:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #212125;
+  padding: 1rem 2rem;
+  border: 1px solid #212125;
+  font-size: 2.7rem;
+}
+.order:hover,
+.order:focus {
+  outline: 0;
+  background-color: #212125;
+  color: #ffa800;
+}
+.order:hover {
+  -webkit-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  -webkit-box-shadow: 0 0.5rem 1rem #212125;
+  box-shadow: 0 0.5rem 1rem #212125;
+}
+.order:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-box-shadow: 0 0.5rem 0.75rem #212125;
+  box-shadow: 0 0.5rem 0.75rem #212125;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.main-container {
+  max-width: 114rem;
+  margin: 10rem auto 8rem;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.main_title {
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.items-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .item {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .item {
+    width: 90%;
+    margin: 0 auto 4rem;
+  }
+  .item_card {
+    width: 90%;
+    margin: auto;
+  }
+  .item_card-overlay--name {
+    left: -10%;
+  }
+}

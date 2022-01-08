@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/orders.css" />
+  </head>
+  <body>
+    <%- include('../includes/nav.ejs') %>
+    <div class="main-container">
+      <main>
+        <!-- if there is a new order we start from here in backend -->
+        <% if (orders.length <= 0) { %>
+        <h1>Nothing is bought yet!</h1>
+        <% } else { %>
+        <div class="order">
+          <!-- h2 id -->
+          <% orders.forEach(order => { %>
+          <h2 class="order_id">
+            <!-- id -->
+            ORDER ID: <span class="order_id-gray"><%= order._id %></span>
+          </h2>
+          <!-- container to flex designs -->
+          <div class="order_designs-container">
+            <!-- item -->
+            <% order.designs.forEach(d => { %>
+            <div class="order_item">
+              <!-- design -->
+              <img
+                src="<%= d.designId.imagePath %>"
+                alt="Design"
+                class="order_item-img"
+              />
+              <!-- overlay + content -->
+              <div class="order_item-overlay">
+                <!-- name of design -->
+                <h3 class="order_item-overlay--name">
+                  <%= d.designId.title %>
+                </h3>
+                <!-- download part -->
+                <a href="<%= order._id %>/<%= d.designId.originalImagePath %>">
+                  <div class="order_download">
+                    <img
+                      src="/img/icon/download.svg"
+                      alt="Download icon"
+                      class="order_download-icon"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+            <% }); %>
+          </div>
+          <% }); %>
+        </div>
+        <% } %>
+      </main>
+    </div>
+    <%- include('../includes/end.ejs') %>
+  </body>
+</html>

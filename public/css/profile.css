@@ -1,0 +1,76 @@
+/* placeholder */
+.DP_form input::placeholder {
+  font-family: "Montserrat", sans-serif;
+  color: var(--DUI_text_color);
+}
+/* body font */
+body {
+  font-family: "Montserrat", sans-serif;
+}
+/* main container */
+.DP_container {
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* content container */
+.DP_content_background {
+  background-color: var(--DUI_container);
+  padding: 60px 35px;
+  width: 90%;
+  max-width: 560px;
+}
+
+/* form */
+.DP_form {
+  width: 100%;
+  color: white;
+}
+/* form inputs main style */
+.DP_form input {
+  display: block;
+  width: 100%;
+  padding: 8px 5px;
+  outline: none;
+  border: 0;
+  border-bottom: 2px solid var(--DUI_border_color);
+  background-color: transparent;
+  margin-bottom: 15px;
+  caret-color: white;
+  color: #b4b4b4;
+}
+/* gender main style */
+.DP_gender {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+/* grnder select box */
+.DP_gender select {
+  padding: 5px;
+  outline: none;
+}
+/* form submit btn */
+.DP_submit {
+  width: 50%;
+  background-color: var(--DUI_btn_color);
+  color: white;
+  padding: 8px;
+  border: 0;
+  outline: 0;
+  margin-top: 15px;
+}
+.DL_form_errors {
+  width: 100%;
+}
+.DL_error {
+  display: block;
+  background: red;
+  color: white;
+  padding: 5px;
+  margin-bottom: 2px;
+  text-align: center;
+}

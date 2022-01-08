@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="css/cart.css" />
+  </head>
+
+  <body>
+    <!-- navbar place -->
+    <%- include('../includes/nav.ejs') %>
+    <!-- end navbar place -->
+
+    <!-- container to make the max-width 1140px and center the content -->
+    <div class="main-container">
+      <% if (designs.length > 0) { %>
+      <main>
+        <!-- heading -->
+        <h1 class="main_title">Your cart contains :</h1>
+
+        <!-- container for flex -->
+        <div class="items-container">
+          <!-- item -->
+          <% designs.forEach(d => { %>
+          <div class="item">
+            <!-- card itself -->
+            <div class="item_card">
+              <!-- design img -->
+              <img
+                src="<%= d.designId.imagePath%>"
+                alt="design"
+                class="item_card-img"
+              />
+
+              <!-- overlay which contains all data -->
+              <div class="item_card-overlay">
+                <!-- price -->
+                <div class="item_card-overlay--price">
+                  <%= d.designId.price %>$
+                </div>
+
+                <!-- design name -->
+                <h2 class="item_card-overlay--name"><%= d.designId.title %></h2>
+
+                <!-- design remove btn -->
+                <form action="/deleteCartItem" method="POST">
+                  <input
+                    type="hidden"
+                    value="<%= d.designId._id %>"
+                    name="designId"
+                  />
+                  <input
+                    type="hidden"
+                    value="<%= d.quantity %>"
+                    name="designQuantity"
+                  />
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                  <button class="item_card-overlay--remove">
+                    <img src="img/icon/remove.svg" alt="Remove icone" />
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </main>
+      <!-- ORDER NOW BTN -->
+      <a href="/checkOut" class="order-now"> ORDER NOW! </a>
+      <% } else { %>
+      <h1>No Products in Cart!</h1>
+      <% } %>
+    </div>
+    <%- include ('../includes/end.ejs')%>
+  </body>
+</html>

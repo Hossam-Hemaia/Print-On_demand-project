@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include ('../includes/head.ejs')%>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+  </head>
+  <body>
+    <%- include ('../includes/nav.ejs')%>
+    <section class="DD_main_container">
+      <!-- options part -->
+      <div class="DD_options_container">
+        <div class="DD_menu_overlay"></div>
+        <div class="DD_toggle_menu">
+          <img src="/img/icon/setting.svg" alt="setting" />
+        </div>
+        <div class="DD_sticky">
+          <div class="DD_options">
+            <!-- profile card -->
+            <a href="/designer/profile">
+              <div class="DD_option_card">
+                <div class="DD_option_card_img">
+                  <img src="/img/icon/profile.svg" alt="userphoto" />
+                </div>
+                <div class="DD_option_card_text">
+                  <h4><%= designerName %></h4>
+                </div>
+              </div>
+            </a>
+            <!-- Best practices card-->
+            <a href="/designer/bestPractices">
+              <div class="DD_option_card">
+                <div class="DD_option_card_img">
+                  <img src="/img/icon/tshirt.svg" alt="userphoto" />
+                </div>
+                <div class="DD_option_card_text">
+                  <h4>Best Practices</h4>
+                </div>
+              </div>
+            </a>
+            <!-- add design card -->
+            <a href="/designer/addDesign">
+              <div class="DD_option_card">
+                <div class="DD_option_card_img">
+                  <img src="img/icon/add-button.svg" alt="userphoto" />
+                </div>
+                <div class="DD_option_card_text">
+                  <h4>Add Design</h4>
+                </div>
+              </div>
+            </a>
+            <!-- earnings card -->
+            <a href="#">
+              <div class="DD_option_card">
+                <div class="DD_option_card_img">
+                  <img src="/img/icon/coin.svg" alt="userphoto" />
+                </div>
+                <div class="DD_option_card_text">
+                  <h4>Total Earnings</h4>
+                  <h2>0$</h2>
+                </div>
+              </div>
+            </a>
+            <!-- withdraw card -->
+            <a href="#">
+              <div class="DD_option_card">
+                <div class="DD_option_card_img">
+                  <img src="/img/icon/atm.svg" alt="userphoto" />
+                </div>
+                <div class="DD_option_card_text">
+                  <h4>Withdraw Earnings</h4>
+                  <h2>0$</h2>
+                </div>
+              </div>
+            </a>
+            <!-- change password card -->
+            <a href="/designer/changePass">
+              <div class="DD_option_card">
+                <div class="DD_option_card_img">
+                  <img src="/img/icon/password.png" alt="userphoto" />
+                </div>
+                <div class="DD_option_card_text">
+                  <h4>Change Password</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- end options part -->
+        </div>
+      </div>
+      <!-- designs part -->
+      <% if (designs.length > 0) { %>
+      <div class="DD_designs_part">
+        <% for (let design of designs) { %>
+        <article class="DD_father_of_design">
+          <!-- start design card -->
+          <div class="DD_design">
+            <!-- top part of design -->
+            <div class="DD_design_img">
+              <img src="/<%= design.imagePath %>" alt="<%= design.title %>" />
+              <div class="DD_design_img_overlay">
+                <h2 class="DD_design_name"><%= design.title %></h2>
+                <div class="DD_design_status">
+                  <span
+                    class="DD_status_color <%= design.published === true? 'DD_design_active' : 'DD_design_not_active' %>"
+                  ></span>
+                  <span class="DD_status_text"
+                    ><%= design.published === true? "Published":"Not Published"
+                    %></span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- bottom part of design -->
+            <div class="DD_design_bottom_part">
+              <p class="DD_design_description"><%= design.description %></p>
+              <div class="DD_design_price"><%= design.price %>$</div>
+              <div class="DD_design_bottom_btn">
+                <a
+                  href="/designer/editDesign/<%= design._id %>"
+                  class="DD_design_edit"
+                >
+                  <img
+                    src="/img/icon/edit.svg"
+                    alt="Edite icon"
+                    style="width: 35px"
+                  />
+                </a>
+                <input
+                  type="hidden"
+                  value="<%= design._id %>"
+                  name="designId"
+                />
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                <button class="DD_design_remove dltDsin" type="button">
+                  <img
+                    src="/img/icon/garbage.svg"
+                    alt="remove icon"
+                    style="width: 35px"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+        <% } %>
+        <!-- end of design card -->
+      </div>
+      <!-- end designs part -->
+      <% } else { %>
+      <div class="DD_no_work">
+        <h1>No work uploaded!</h1>
+      </div>
+      <% } %>
+    </section>
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/designActions.js"></script>
+    <%-include ('../includes/end.ejs')%>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include ('../includes/head.ejs')%>
+    <link rel="stylesheet" href="/css/profile.css" />
+  </head>
+  <body>
+    <!-- main container -->
+    <%-include ('../includes/nav.ejs')%>
+    <section class="DP_container">
+      <!-- content container -->
+      <div class="DP_content_background">
+        <!-- form -->
+        <form
+          action="/designer/saveChanges"
+          method="POST"
+          novalidate
+          class="DP_form"
+        >
+          <% if (hasError) { %>
+          <div class="DL_form_errors">
+            <small class="DL_error"><%= errorMessage %></small>
+          </div>
+          <% } %>
+          <!-- first input -->
+          <div class="DP_input--name">
+            <input
+              type="text"
+              name="name"
+              class="DP_fullname"
+              placeholder="Full Name"
+              value="<%=designer.name%>"
+            />
+          </div>
+          <!-- second part -->
+          <div class="DP_input--country">
+            <input
+              type="text"
+              name="country"
+              class="DP_country"
+              placeholder="Country"
+              value="<%=designer.location.country%>"
+            />
+            <input
+              type="text"
+              name="city"
+              class="DP_city"
+              placeholder="City"
+              value="<%=designer.location.city%>"
+            />
+          </div>
+          <!-- gender - Age -->
+          <div class="DP_age--gender">
+            <!-- input number for age -->
+            <input
+              type="number"
+              name="age"
+              class="DP_age"
+              placeholder="Age"
+              value="<%=designer.age%>"
+            />
+            <!-- gender -->
+            <div class="DP_gender">
+              <span>Gender : </span>
+              <select name="gender">
+                <option value="<%=designer.gender%>">
+                  <%=designer.gender%>
+                </option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div class="DP_input--name">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="E-Mail"
+                value="<%=designer.email%>"
+                disabled
+              />
+            </div>
+          </div>
+          <!-- submit btn -->
+          <input type="hidden" name="designerId" value="<%=designer._id%>" />
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+          <button type="submit" class="DP_submit">Apply Changes</button>
+        </form>
+      </div>
+    </section>
+    <%-include ('../includes/end.ejs')%>
+  </body>
+</html>

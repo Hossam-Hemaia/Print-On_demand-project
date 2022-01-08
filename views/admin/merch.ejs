@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include ('../includes/head.ejs')%>
+    <link rel="stylesheet" href="/css/merch.css" />
+  </head>
+  <body>
+    <!-- navbar -->
+    <%-include ('../includes/nav.ejs')%>
+    <!-- end navbar -->
+
+    <div class="main-container">
+      <!-- content -->
+      <main>
+        <!-- main heading -->
+        <h1 class="heading">Designer Best Practice</h1>
+        <!-- h2  Artwork -->
+        <h2 class="artwork">Artwork tips</h2>
+        <!-- p -->
+        <p class="artwork_p">
+          For best results, please use one of the design templates to make your
+          products.
+        </p>
+        <!-- h2 -->
+        <h2 class="artwork_Specifications">Artwork Specifications</h2>
+        <!-- p -->
+        <p class="artwork_p">
+          To ensure your final artwork file will upload to the portal smoothly,
+          follow these guidelines:
+        </p>
+        <!-- start tips -->
+        <ul class="artwork_tips">
+          <li>
+            Create your final artwork in RGB: This will produce a greater range
+            of colors when printed on the different products.
+          </li>
+          <li>
+            Output your artwork file at 100% of the print dimensions at 300dpi.
+          </li>
+          <li>
+            <p>
+              Make sure your artwork file is no larger than 25MB. If you are
+              using Photoshop, you can choose "Smallest File Size" in the PNG
+              Format Options dialog to help reduce the final artwork file size.
+            </p>
+            <p>
+              <img
+                src="/img/PNGFormatDialog._CB1566583591_.jpg"
+                class="img1"
+                alt="PNGFormatDialog"
+              />
+            </p>
+          </li>
+          <li>
+            Keep in mind, many products share the same artwork file but will
+            have different print size and locations based on product and garment
+            size.
+          </li>
+        </ul>
+        <!-- part 2 of tips -->
+        <h2 class="artwork_Sizing-heading">Artwork Sizing and Placement</h2>
+        <ul class="artwork_Sizing">
+          <li>
+            For apparel products: While you can certainly use the entire 15"
+            width, often customers find that to be overwhelming. In general,
+            keeping your maximum dimension to 12 inches or less results in
+            better centering on the garments.
+          </li>
+          <li>
+            Be conscious of the placement of design elements and where they
+            would appear in relation to your customer's anatomy. Remember that
+            designs are printed on men’s, women’s, and kids' products.
+          </li>
+          <li>
+            <p>
+              Horizontally center designs visually as well as mathematically.
+              Heavy design elements on one side can make a design feel off
+              balance even if it is mathematically centered.
+            </p>
+            <div class="row-flex">
+              <div class="row-flex_item">
+                <img
+                  src="/img/EX-Centered-MathFix._CB1566412724_.jpg"
+                  alt="EX-Centered-MathFix"
+                  id="img1"
+                />
+                <p class="artwork_Sizing-centring">Mathematically centered</p>
+              </div>
+              <div class="row-flex_item">
+                <img
+                  src="/img/EX-Centered-MathFix._CB1566412724_.jpg"
+                  alt="EX-Centered-MathFix"
+                  id="img2"
+                />
+                <p class="artwork_Sizing-centring">Mathematically centered</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            For apparel, designs typically do the best when they are placed near
+            the top of the print area. For PopSockets, center designs across the
+            whole area.
+          </li>
+        </ul>
+        <!-- End part 2 -->
+        <h2 class="part3">Defining Transparency</h2>
+        <p class="part3_p">
+          What you see onscreen may not be what is printed. On screen, when
+          lowering the opacity of elements within your design, the underlying
+          artwork becomes visible. During printing, a white underbase is printed
+          on darker colored products under the artwork and may cause undesired
+          results with transparencies.
+        </p>
+        <!-- blue imgs part -->
+        <div class="row-flex">
+          <div class="row-flex_item">
+            <img
+              src="/img/EX-Transparency-Onscreen._CB1565219376_.jpg"
+              alt="EX-Centered-MathFix"
+            />
+            <p class="artwork_Sizing-centring">Onscreen view</p>
+          </div>
+          <div class="row-flex_item">
+            <img
+              src="/img/EX-Transparency-Printed._CB1565219376_.jpg"
+              alt="EX-Centered-MathFix"
+            />
+            <p class="artwork_Sizing-centring">Printed view</p>
+          </div>
+        </div>
+        <!--  -->
+        <h2 class="print">Print True Black</h2>
+        <p class="print_p">
+          CMYK is the most common color space for printing. However, we require
+          all art files to be created in an RGB space. The richest black you can
+          achieve is R-0 G-0 B-0 or #000000. You can accomplish this by using
+          the software's color picker or by manually entering in the color
+          build.
+        </p>
+        <div class="row-flex">
+          <div class="row-flex_item">
+            <img
+              src="/img/TrueBlack._CB1561677671_.jpg"
+              alt="EX-Centered-MathFix"
+              class="img-full"
+            />
+          </div>
+        </div>
+        <!--  -->
+        <h2 class="resolution">Artwork Resolution</h2>
+        <p class="resolution_p">
+          When designing your artwork, create the files at 100% of the print
+          dimensions at 300 DPI. This will ensure a sharp image that isn't
+          blurry or pixelated. Your image should remain sharp even when your
+          artwork elements are sized down for printing. Remember to not scale
+          artwork up (unless it is a vector file) as this will also cause
+          pixelation.
+        </p>
+        <div class="row-flex">
+          <div class="row-flex_item">
+            <img
+              src="/img/EX-Resolution-LoResFix-SM._CB1566413362_.jpg"
+              alt="EX-Centered-MathFix"
+            />
+            <p class="artwork_Sizing-centring">Low resolution</p>
+          </div>
+          <div class="row-flex_item">
+            <img
+              src="/img/EX-Resolution-HiResFix-SM._CB1566413362_.jpg"
+              alt="EX-Centered-MathFix"
+            />
+            <p class="artwork_Sizing-centring">High resolution</p>
+          </div>
+        </div>
+        <!--  -->
+        <h2 class="colors">Choosing Colors</h2>
+        <p class="colors_p">
+          Water-based inks are used in direct to garment (DTG) printing, and the
+          ink colors (CMYK) are translucent. On darker colors, a white ink base
+          is printed first and then color is added on top. This is key to seeing
+          the colors on dark garments.
+        </p>
+        <div class="row-flex">
+          <div class="row-flex_item">
+            <img
+              src="/img/EX-ColorChoices-OnScreen-SM._CB1565221604_.jpg"
+              alt="EX-Centered-MathFix"
+            />
+            <p class="artwork_Sizing-centring">Onscreen view</p>
+          </div>
+          <div class="row-flex_item">
+            <img
+              src="/img/EX-ColorChoices-Printed-SM._CB1565221604_.jpg"
+              alt="EX-Centered-MathFix"
+            />
+            <p class="artwork_Sizing-centring">Printed outcome</p>
+          </div>
+        </div>
+        <!-- p -->
+        <p class="start_p">
+          Keep in mind, very subtle color differences between colors in your
+          artwork and the base color of the product (e.g. a dark gray design on
+          a black shirt) may not print as expected. Typically RGB screen colors
+          appear more vibrant onscreen than CMYK colors printed on products.
+        </p>
+        <div class="row-flex2">
+          <div class="row-flex_item2">
+            <img
+              src="/img/EX-SubtleColors-HeatherlOnscreen-SM._CB1565223685_.jpg"
+              alt="EX-Centered-MathFix"
+            />
+            <p class="artwork_Sizing-centring">
+              HEATHER BLUE T-SHIRT: Onscreen view
+            </p>
+          </div>
+          <div class="row-flex_item2">
+            <img
+              src="/img/EX-SubtleColors-HeatherBPrinted-SM._CB1565223514_.jpg"
+              alt="EX-Centered-MathFix"
+            />
+            <p class="artwork_Sizing-centring">Printed outcome</p>
+          </div>
+          <div class="row-flex_item2">
+            <img
+              src="/img/EX-SubtleColors-DkHeatherOnscreen-SM._CB1565223514_.jpg"
+              alt="EX-Centered-MathFix"
+            />
+            <p class="artwork_Sizing-centring">
+              DARK HEATHER SWEATSHIRT: Onscreen view
+            </p>
+          </div>
+          <div class="row-flex_item2">
+            <img
+              src="/img/EX-SubtleColors-DkHeatherPrinted-SM._CB1565223514_.jpg"
+              alt="EX-Centered-MathFix"
+            />
+            <p class="artwork_Sizing-centring">Printed outcome</p>
+          </div>
+          <div class="row-flex_item2">
+            <img
+              src="/img/EX-SubtleColors-YellowOnscreen-SM._CB1565223610_.jpg"
+              alt="EX-Centered-MathFix"
+            />
+            <p class="artwork_Sizing-centring">LEMON T-SHIRT: Onscreen view</p>
+          </div>
+          <div class="row-flex_item2">
+            <img
+              src="/img/EX-SubtleColors-YellowPrinted-SM._CB1565223610_.jpg"
+              alt="EX-Centered-MathFix"
+            />
+            <p class="artwork_Sizing-centring">Printed outcome</p>
+          </div>
+        </div>
+
+        <!-- p -->
+        <p class="text_p">
+          Remember, customers are buying what they see based on the image on the
+          screen and may think that the actual printed product is a mistake
+          leading to bad reviews and returns.
+        </p>
+        <h2 class="text">Printing Text and Lines</h2>
+        <p class="text_p">
+          Recommendations for type and line weights will differ based on what it
+          is printed on. The following images are recommendations based on the
+          type of materials. These should be used as general guidelines for how
+          to design your artwork to print as expected. Keep in mind, the artwork
+          will always look cleaner and crisper onscreen in comparison to the
+          printed version.
+        </p>
+        <p class="text_p">Light Weight Fabrits (t-shirts, tank tops, etc)</p>
+        <p class="text_p">
+          The recommended minimum font size is 32pt and minimum line weight is
+          2pt as shown in the examples below:
+        </p>
+        <div class="row-flex2">
+          <div class="row-flex_item2">
+            <img
+              src="/img/EX-TypeLinesTS-Helv-Print-SM._CB1565828843_.png"
+              alt="EX-TypeLinesTS-Helv-Print-SM"
+            />
+            <p class="text_p">Helvetica (San Serif): Onscreen</p>
+          </div>
+          <div class="row-flex_item2">
+            <img
+              src="/img/EX-TypeLinesTS-Helv-Print-SM._CB1565828843_.jpg"
+              alt="EX-TypeLinesTS-Helv-Print-SM"
+            />
+            <p class="text_p">Printed outcome</p>
+          </div>
+          <div class="row-flex_item2">
+            <img
+              src="/img/EX-TypeLinesTS-Geor-Onscreen-SM._CB1565830717_.png"
+              alt="EX-TypeLinesTS-Helv-Print-SM"
+            />
+            <p class="text_p">Helvetica (San Serif): Onscreen</p>
+          </div>
+          <div class="row-flex_item2">
+            <img
+              src="/img/EX-TypeLinesTS-Geor-Print-SM._CB1565830717_.jpg"
+              alt="EX-TypeLinesTS-Helv-Print-SM"
+            />
+            <p class="text_p">Helvetica (San Serif): Onscreen</p>
+          </div>
+          <div class="row-flex_item2">
+            <img
+              src="/img/EX-TypeLinesTS-Script-Onscreen-SM._CB1565830717_.png"
+              alt="EX-TypeLinesTS-Helv-Print-SM"
+            />
+            <p class="text_p">Helvetica (San Serif): Onscreen</p>
+          </div>
+          <div class="row-flex_item2">
+            <img
+              src="/img/EX-TypeLinesTS-Script-Print-SM._CB1565830717_.jpg"
+              alt="EX-TypeLinesTS-Helv-Print-SM"
+            />
+            <p class="text_p">Helvetica (San Serif): Onscreen</p>
+          </div>
+        </div>
+        <p class="text_p">Heavy Weight Fabrits (sweatshirts, hoodies, etc)</p>
+        <p class="text_p">
+          The recommended minimum font size is 48pt and minimum line weight is
+          3pt as shown in the examples below:
+        </p>
+        <div class="row-flex2">
+          <div class="row-flex_item2">
+            <img
+              src="/img/EX-TypeLinesSS-Helv-Onscreen-SM._CB1565888667_.png"
+              alt="EX-TypeLinesTS-Helv-Print-SM"
+            />
+            <p class="text_p">Helvetica (San Serif): Onscreen</p>
+          </div>
+          <div class="row-flex_item2">
+            <img
+              src="/img/EX-TypeLinesSS-Helv-Print-SM._CB1565888668_.jpg"
+              alt="EX-TypeLinesTS-Helv-Print-SM"
+            />
+            <p class="text_p">Helvetica (San Serif): Onscreen</p>
+          </div>
+          <div class="row-flex_item2">
+            <img
+              src="/img/EX-TypeLinesSS-Geor-Onscreen-SM._CB1565888667_.png"
+              alt="EX-TypeLinesTS-Helv-Print-SM"
+            />
+            <p class="text_p">Helvetica (San Serif): Onscreen</p>
+          </div>
+          <div class="row-flex_item2">
+            <img
+              src="/img/EX-TypeLinesSS-Geor-Print-SM._CB1565888858_.jpg"
+              alt="EX-TypeLinesTS-Helv-Print-SM"
+            />
+            <p class="text_p">Helvetica (San Serif): Onscreen</p>
+          </div>
+        </div>
+        <p class="text_p">Popsockets</p>
+        <p class="text_p">
+          The recommended minimum font size is 24pt and minimum line weight is
+          2pt.
+        </p>
+        <div class="row-flex">
+          <div class="row-flex_item">
+            <img
+              src="/img/EX-TypeLinesPS-OnScreen-SM._CB438751956_.png"
+              alt="EX-TypeLinesPS-OnScreen-SM"
+            />
+            <p class="text_p">Onscreen view</p>
+          </div>
+          <div class="row-flex_item">
+            <img
+              src="/img/EX-TypeLinesPS-Print-SM._CB1565820856_.png"
+              alt="EX-TypeLinesPS-OnScreen-SM"
+            />
+            <p class="text_p">Onscreen view</p>
+          </div>
+        </div>
+        <p class="text_p">
+          If you have questions on how your artwork will print, it is
+          recommended to create and order a sample of the product you would like
+          to sell.
+        </p>
+        <hr />
+        <!-- product tips -->
+        <h2 class="productTips">Product tips</h2>
+        <p class="text_p">
+          In general, the print area on the front of garments start 1.5" down
+          from the bottom of the collar on the front, and 3" down from the
+          collar on the back. The garments with exception to this is the
+          <b> Men's Raglan Baseball Tee</b> which starts 2.5" down from the
+          bottom of the collar on the front.
+        </p>
+        <p class="text_p">The following tips are for specific products:</p>
+        <h2 class="productTips">V-neck T-shirts</h2>
+        <p class="text_p">
+          The top of the print area is 1.5" from the tip of the V on the collar.
+          While the artwork is the same dimensions as the t-shirts, long sleeve
+          t-shirts, etc, the placement of the artwork will visually look much
+          lower. Please keep this in mind when creating your artwork.
+        </p>
+        <div class="row-flex">
+          <div class="row-flex_item">
+            <img
+              src="/img/VNeckComparison._CB1561747173_.jpg"
+              class="img-full"
+              alt="VNeckComparison"
+            />
+          </div>
+        </div>
+        <h2 class="productTips">Raglan Baseball T-shirts</h2>
+        <p class="text_p">
+          The men's and women's ragland baseball t-shirts are constructed
+          differently, which affect the print area on the garment. The men's
+          crewneck and the angle of the full length sleeves require the top of
+          the printing area to start 2.5" down from the collar and a slightly
+          reduced print area.
+        </p>
+        <div class="row-flex">
+          <div class="row-flex_item">
+            <img
+              src="/img/RaglanCompare._CB1561682104_.jpg"
+              class="img-full"
+              alt="VNeckComparison"
+            />
+          </div>
+        </div>
+        <h2 class="productTips">Zip Hoodies</h2>
+        <p class="text_p">
+          The zip hoodie uses the same artwork dimension as the pullover hoodie
+          (4500px x 4050px) and will print across the zipper. We recommend that
+          you do not put fine lines or small type across the zipper because the
+          fabric may shift slightly during the printing process and distort the
+          artwork. We recommend using the new PSD hoodies template which
+          highlights the safe zones on the front of the zip hoodie.
+        </p>
+        <hr />
+        <h2 class="productTips">Do & Don't tips</h2>
+        <h3>Do</h3>
+        <p class="text_p">
+          <ul>
+            <li>Create designs that work with the products in terms of placement, color and size.</li>
+            <li>Double check for misspellings in your artwork as well as in your product descriptions.</li>
+            <li>Avoid elements and fonts that subtly blend into the product color. These can either blend in completely and not be visible on the product or print a halo with a hard edge.</li>
+            <li>Refer to the artwork tips above when including elements with a transparency less than 20%. These may not print as expected.</li>
+            <li>Be aware of what content is allowable and what is not, and how this differs for each marketplace. For more information on allowable content, read the Content Policy section.</li>
+          </ul>
+        </p>
+        <h3>Don't</h3>
+        <p class="text_p">
+          <ul>
+            <li>
+              Create artwork or product descriptions with misleading information (e.g. "neon," "glitter," "glow-in-the-dark") which will not print as intended and will mislead customers.
+            </li>
+            <li>
+              Use words or sentences that describe the product (e.g. shipping promises, sizing, print quality, print effect).
+            </li>
+            <li>
+              Submit designs that pertain to accidents, natural disasters, and shootings. For more information on allowable content, read the Content Policy section.
+            </li>
+          </ul>
+        </p>
+      </main>
+    </div>
+    <%-include ('../includes/end.ejs')%>
+  </body>
+</html>

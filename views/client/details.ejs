@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include ('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/details.css" />
+  </head>
+  <body>
+    <%- include('../includes/nav.ejs') %>
+    <!-- main content -->
+    <main>
+      <!-- container to flex the elements -->
+      <div class="Details-container">
+        <!-- main part -->
+        <div class="main-content">
+          <!-- img part -->
+          <div class="img-container">
+            <!-- design itself -->
+            <img src="/<%= design.imagePath %>" alt="<%= design.title %>" />
+            <!-- overlay transparent to disable download event -->
+            <div class="img-container_overlay"></div>
+          </div>
+          <!-- details part -->
+          <div class="details-description">
+            <!-- just a container -->
+            <div class="details-description_box-1">
+              <!-- name of design -->
+              <h1 class="details-description--name"><%= design.title %></h1>
+              <!-- price place -->
+              <div class="details-description--price">
+                <!-- price -->
+                <span><%= design.price %>$</span>
+              </div>
+            </div>
+            <!-- just a container -->
+            <div class="details-description_box-2">
+              <!-- description -->
+              <p class="description"><%= design.description %></p>
+              <!-- buy btn -->
+              <% if (authenticatedClient){%>
+              <input type="hidden" value="<%= design._id %>" name="designId" />
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+              <button class="buy addToCrt" type="button">Add to Cart</button>
+              <%}%>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!-- secondary part -->
+        <div class="secondary-content">
+          <!-- anchor tage to go to the details page with the new design details -->
+          <% if (designs.length > 0) {%> <%for (let d of designs){%>
+          <a href="/market/designDetails/<%= d._id%>">
+            <!-- container of the design  -->
+            <div class="suggestion">
+              <!-- img small for design -->
+              <img src="/<%= d.imagePath %>" alt="<%= d.title %>" />
+              <!-- overlay with the name of design -->
+              <div class="suggestion-overlay">
+                <!-- name of suggestion design -->
+                <h2 class="suggestion_name"><%= d.title %></h2>
+              </div>
+            </div>
+          </a>
+          <%}%> <%}%>
+        </div>
+      </div>
+    </main>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/designActions.js"></script>
+    <script src="/js/cartNotify.js"></script>
+    <%- include ('../includes/end.ejs')%>
+  </body>
+</html>

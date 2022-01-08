@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include ('../includes/head.ejs')%>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/market.css" />
+  </head>
+  <body>
+    <%-include ('../includes/nav.ejs')%>
+    <!-- main content -->
+    <main>
+      <% if (designs.length > 0) { %> <% for (let design of designs) { %>
+      <!-- start with card -->
+      <div class="card">
+        <!-- start with img container -->
+        <div class="card__box--img">
+          <!-- img -->
+          <img src="/<%= design.imagePath %>" alt="<%= design.title %>" />
+          <!-- overlay -->
+          <div class="img-details">
+            <!-- name -->
+            <h2 class="design-name"><%= design.title %></h2>
+          </div>
+        </div>
+        <!-- start with description box -->
+        <div class="card__box--descriptin">
+          <p><%= design.description %></p>
+          <!-- price icone -->
+          <div class="card__price"><%= design.price %>$</div>
+        </div>
+        <!-- start with card btns -->
+        <div class="card__box--btns">
+          <!-- left btn "shopping btn" -->
+          <input type="hidden" value="<%= design._id %>" name="designId" />
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+          <div>
+            <% if (authenticatedClient) { %>
+            <button type="button" class="card__btn btn-left addToCrt">
+              <img src="/img/icon/shopping-cart.svg" alt="shopping icon" />
+            </button>
+            <% } %>
+          </div>
+          <!-- right btn "details btn" -->
+          <a
+            href="/market/designDetails/<%= design._id %>"
+            class="card__btn btn-right"
+          >
+            <img src="/img/icon/report.svg" alt="details icon" />
+          </a>
+        </div>
+      </div>
+      <% } %> <% } else { %>
+      <h1>Market is empty!</h1>
+      <% } %>
+    </main>
+    <section class="pagination">
+      <%if (authenticatedClient){%>
+      <div class="pagination_input">
+        <label> Designs Per Page :</label>
+        <input type="number" name="itemPerPage" min="1" max="20" id="IPP" />
+        <button type="button" id="pgnat">Show</button>
+      </div>
+      <%}%>
+      <div class="pagination_pages">
+        <% if (currentPage !== 1 && previousPage !== 1) { %>
+        <a href="?page=1">1</a>
+        <% } %> <% if (hasPreviousPage) { %>
+        <a href="?page=<%= previousPage %>"><%= previousPage %></a>
+        <% } %>
+        <a href="?page=<%= currentPage %>" class="pagination-active active"
+          ><%= currentPage %></a
+        >
+        <% if (hasNextPage) { %>
+        <a href="?page=<%= nextPage %>"><%= nextPage %></a>
+        <% } %> <% if (lastPage !== nextPage && lastPage !== currentPage) { %>
+        <a href="?page=<%= lastPage %>"><%= lastPage %></a>
+        <% } %>
+      </div>
+    </section>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/designActions.js"></script>
+    <script src="/js/cartNotify.js"></script>
+    <%-include ('../includes/end.ejs')%>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,600;1,500&display=swap");
+.navbar__toggle {
+  cursor: pointer;
+  display: none;
+}
+.navbar__toggle > span {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  border-radius: 4px;
+  display: block;
+  transition: all 0.3s ease-in-out;
+}
+.navbar__toggle > span:not(:last-child) {
+  margin-bottom: 3px;
+}
+.navbar__toggle-active .line-1 {
+  transform: translateY(6px) rotate(45deg);
+}
+.navbar__toggle-active .line-2 {
+  opacity: 0;
+}
+.navbar__toggle-active .line-3 {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.DNAV {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f6f5f5;
+  margin-bottom: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+.DNAV_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1140px;
+  margin: auto;
+}
+.DNAV_logo {
+  font-size: 25px;
+  font-weight: 500;
+  display: none;
+}
+.DNAV ul {
+  list-style: none;
+}
+.DNAV ul a:link,
+.DNAV ul a:visited {
+  text-decoration: none;
+  color: #000000;
+}
+.DNAV ul a:link:hover li,
+.DNAV ul a:visited:hover li {
+  color: #22e000;
+}
+.DNAV ul li {
+  display: inline-block;
+  font-size: 16px;
+  padding: 20px 10px;
+  margin: 0 3px;
+}
+.DNAV_left .ON_DAD {
+  position: relative;
+  display: inline-block;
+}
+.DNAV_left .ON_DAD .orders-number {
+  background-color: #ffb100;
+  font-size: 12px;
+  border-radius: 35%;
+  color: #ffffff;
+  position: absolute;
+  display: inline-block;
+  left: 111%;
+  transform: translate(-50%);
+  top: -60%;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  line-height: 15px;
+}
+.DNAV_right .DNAV-red {
+  color: #ff3427;
+}
+.DNAV_right .DNAV-red:hover {
+  color: #ff3427 !important;
+}
+
+@media (max-width: 600px) {
+  .navbar__toggle {
+    display: block;
+  }
+  .DNAV_logo {
+    display: block;
+  }
+  .DNAV_overflow {
+    position: relative;
+  }
+  .DNAV_FLEX_MOBILE {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  .DNAV_content {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    bottom: 0;
+    z-index: 9999;
+    transform: translateY(100%) translateX(-100%);
+    background-color: #f6f5f5;
+    height: calc(100vh - 50px);
+    width: 100%;
+    padding-top: 30px;
+    transition: transform 0.5s ease-in-out;
+  }
+  .DNAV_content.DNAV_content-active {
+    transform: translateY(100%) translateX(0);
+  }
+  .DNAV_left,
+  .DNAV_right {
+    width: 100%;
+    text-align: center;
+  }
+  .DNAV_left li a,
+  .DNAV_right li a {
+    font-size: 18px;
+  }
+  /*  */
+  .DNAV_left li,
+  .DNAV_right li {
+    display: block;
+    padding-left: 20px;
+    border-bottom: 1px solid #e8e5e5;
+    width: 80%;
+  }
+  /*  */
+  .DNAV_left .DNAV-red,
+  .DNAV_right .DNAV-red {
+    border: 0;
+  }
+}

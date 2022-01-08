@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include ('../includes/head.ejs')%>
+    <link rel="stylesheet" href="/css/register.css" />
+  </head>
+  <body>
+    <%-include ('../includes/nav.ejs')%>
+    <!-- content part -->
+    <main class="DR_content">
+      <!-- black overlay -->
+      <div class="DR_content-overlay">
+        <!-- header icone -->
+        <a href="/" class="DR_content-overlay--icon">
+          <!-- icon itself -->
+          <img
+            src="/img/icon/home.svg"
+            alt="Home icone"
+            class="DR_content-overlay--img"
+          />
+        </a>
+
+        <!-- bottom part -->
+        <section class="DR__bottom">
+          <!-- center text  -->
+          <div class="DR_text-center">
+            <!-- heading -->
+            <h1 class="DR_heading">
+              <!-- change type -->
+              Register as :
+              <span class="DR_heading-span" id="DR_type">Customer</span>
+            </h1>
+            <% if (hasError) { %>
+            <div class="DL_form_errors">
+              <small class="DL_error"><%= errorMessage %></small>
+            </div>
+            <% } %>
+            <!-- start bottom part -->
+            <div class="DR_forms">
+              <!-- buttons part -->
+              <span
+                class="DR_transform-btn DR_transform-btn--customer DR_btn-active"
+                id="DR_btn-customer"
+                >Customer</span
+              >
+              <span
+                class="DR_transform-btn DR_transform-btn--designer"
+                id="DR_btn-designer"
+                >Designer</span
+              >
+              <!--end buttons part -->
+
+              <!-- forms and errors part -->
+              <div class="DR_forms__errors">
+                <!-- start with customer form -->
+                <div class="DR_forms--customer">
+                  <!-- customer form -->
+                  <form
+                    action="/client-register"
+                    method="POST"
+                    novalidate
+                    class="DR_customer-form"
+                  >
+                    <!-- full name -->
+                    <input
+                      type="text"
+                      name="firstName"
+                      placeholder="First Name"
+                      value="<% if(hasError && isClient){%><%= oldInput.oldFirstName%><%}%>"
+                    />
+                    <input
+                      type="text"
+                      name="lastName"
+                      placeholder="Last Name"
+                      value="<% if(hasError && isClient){%><%= oldInput.oldLastName%><%}%>"
+                    />
+                    <!-- gender part -->
+                    <div class="gender_place">
+                      <!-- text -->
+                      <label for="DR_gender">Gender: </label>
+                      <!-- select itself -->
+                      <select name="gender" id="DR_gender">
+                        <!-- male option -->
+                        <option value="male">Male</option>
+                        <!-- female option -->
+                        <option value="female">Female</option>
+                      </select>
+                    </div>
+                    <!-- place data -->
+                    <div class="DR_place-data">
+                      <!-- age -->
+                      <input type="number" name="age" placeholder="Age" />
+                    </div>
+                    <!-- email -->
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      value="<% if(hasError && isClient){%><%= oldInput.oldEmail%><%}%>"
+                      required
+                    />
+                    <!-- passwords part -->
+                    <div class="DR_passwords-place">
+                      <!-- main password -->
+                      <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        value="<% if(hasError && isClient){%><%= oldInput.oldPassword%><%}%>"
+                        required
+                      />
+                      <!-- confirm password -->
+                      <input
+                        type="password"
+                        name="confirmPassword"
+                        placeholder="Confirm Password"
+                        required
+                      />
+                    </div>
+                    <!-- btn submit part -->
+                    <div class="DR_text-center">
+                      <!-- btn -->
+                      <input
+                        type="hidden"
+                        name="_csrf"
+                        value="<%= csrfToken %>"
+                      />
+                      <button type="submit" class="DR_button">Register</button>
+                      <!-- linke to go to login page -->
+                      <a href="/login" class="DR_login"
+                        >Already have account!</a
+                      >
+                    </div>
+                  </form>
+                </div>
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!-- start with designer form -->
+                <div class="DR_forms--designer">
+                  <!-- customer form -->
+                  <form
+                    action="/designer-register"
+                    method="POST"
+                    novalidate
+                    class="DR_designer-form"
+                  >
+                    <!-- full name -->
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Full Name"
+                      value="<% if(hasError && isDesigner){%><%= oldInput.oldName%><%}%>"
+                    />
+                    <!-- gender part -->
+                    <div class="gender_place">
+                      <!-- text -->
+                      <label for="DR_gender">Gender: </label>
+                      <!-- select itself -->
+                      <select name="gender" id="DR_gender2">
+                        <!-- male option -->
+                        <option value="male">Male</option>
+                        <!-- female option -->
+                        <option value="female">Female</option>
+                      </select>
+                    </div>
+                    <!-- place data -->
+                    <div class="DR_place-data">
+                      <!-- country -->
+                      <input
+                        type="text"
+                        name="country"
+                        placeholder="Country"
+                        class="DR_error"
+                        value="<% if(hasError && isDesigner){%><%= oldInput.oldCountry%><%}%>"
+                      />
+                      <!-- city -->
+                      <input
+                        type="text"
+                        name="city"
+                        placeholder="City"
+                        class="DR_success"
+                        value="<% if(hasError && isDesigner){%><%= oldInput.oldCity%><%}%>"
+                      />
+                      <!-- age -->
+                      <input
+                        type="number"
+                        name="age"
+                        placeholder="Age"
+                        value="<% if(hasError && isDesigner){%><%= oldInput.oldAge%><%}%>"
+                      />
+                    </div>
+                    <!-- email -->
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      value="<% if(hasError && isDesigner){%><%= oldInput.oldEmail%><%}%>"
+                      required
+                    />
+                    <!-- passwords part -->
+                    <div class="DR_passwords-place">
+                      <!-- main password -->
+                      <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        value="<% if(hasError && isDesigner){%><%= oldInput.oldPassword%><%}%>"
+                        required
+                      />
+                      <!-- confirm password -->
+                      <input
+                        type="password"
+                        name="confirmPassword"
+                        placeholder="Confirm Password"
+                        required
+                      />
+                    </div>
+                    <!-- btn submit part -->
+                    <div class="DR_text-center">
+                      <!-- btn -->
+                      <input
+                        type="hidden"
+                        name="_csrf"
+                        value="<%= csrfToken %>"
+                      />
+                      <button type="submit" class="DR_button">Register</button>
+                      <!-- linke to go to login page -->
+                      <a href="/login" class="DR_login"
+                        >Already have account!</a
+                      >
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="js/register.js"></script>
+    <%-include ('../includes/end.ejs')%>
+  </body>
+</html>

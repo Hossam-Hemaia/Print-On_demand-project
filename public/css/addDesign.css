@@ -1,0 +1,179 @@
+/* placeholder */
+.DAD_form input:not(.DAD_file)::placeholder,
+.DAD_form textarea::placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+/* body font */
+body {
+  font-family: "Montserrat", sans-serif;
+}
+/* main backgroun */
+.DAD_main_sction_color {
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+/* content container */
+.DAD_main_container {
+  background-color: var(--DAD_container);
+  padding: 60px 30px 30px;
+  width: 90%;
+  margin: 30px 0;
+  max-width: 720px;
+}
+
+/* DAD_form */
+.DAD_form {
+  width: 100%;
+}
+
+.DAD_design_name,
+.DAD_design_price,
+.DAD_description {
+  border-bottom: 2px solid var(--DAD_border);
+  margin-top: 15px;
+  padding: 10px 0px;
+}
+
+.DAD_design_name label,
+.DAD_design_price label,
+.DAD_description label {
+  display: block;
+}
+.DAD_form input:not(.DAD_file),
+.DAD_form textarea {
+  border: 0;
+  background-color: transparent;
+  width: 100%;
+  display: block;
+  padding: 8px 5px;
+  outline: none;
+  color: var(--DAD_select);
+}
+.DAD_form textarea {
+  resize: none;
+}
+/* file */
+.DAD_file {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+
+.DAD_file-input label {
+  display: block;
+  position: relative;
+  width: 200px;
+  padding: 8px;
+  color: black;
+  background-color: var(--DAD_select);
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 0.8em;
+  margin-bottom: 70px;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+  outline: none;
+  margin-top: 20px;
+}
+
+.DAD_file-input input:hover + label,
+.DAD_file-input input:focus + label {
+  transform: scale(1.02);
+}
+.DAD_file-name {
+  position: absolute;
+  bottom: -50px;
+  left: 1px;
+  font-size: 0.85rem;
+  color: #555;
+}
+/* file */
+
+/* selections */
+.DAD_selections select {
+  width: 200px;
+  border: 0;
+  background-color: var(--DAD_select);
+  color: black;
+  outline: none;
+  padding: 7px;
+}
+
+/* select label */
+.DAD_catigory_select label,
+.DAD_colors_select label {
+  display: block;
+  margin: 10px 0 7px;
+}
+
+/* some options overread style */
+#DAD_colors_select option {
+  background-color: var(--i);
+  font-size: 17px;
+}
+#DAD_colors_select option:not(.DAD_white_color) {
+  color: white;
+}
+.DAD_submit_center {
+  text-align: center;
+}
+.DAD_submit {
+  padding: 8px;
+  width: 70%;
+  background-color: white;
+  color: var(--DAD_container);
+  border: 0;
+  outline: 0;
+  margin-top: 15px;
+}
+
+/**/
+.DAD_publish {
+  text-align: center;
+}
+.DAD_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0 20px;
+}
+#checkStat {
+  width: initial;
+  margin-left: 10px;
+}
+.DAD_publish p {
+  display: inline-block;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+.DL_form_errors {
+  width: 50%;
+}
+.DL_error {
+  display: block;
+  background: red;
+  color: white;
+  padding: 5px;
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+@media (min-width: 800px) {
+  .DAD_selections {
+    display: flex;
+    justify-content: space-between;
+  }
+  .DAD_file-input {
+    margin-top: 16px;
+  }
+}

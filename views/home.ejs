@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include ('./includes/head.ejs')%>
+    <link rel="stylesheet" href="/css/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarpanch:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <%-include ('./includes/nav.ejs')%>
+    <!-- container -->
+    <div class="Home_container">
+      <!-- top part -->
+      <div class="Home_top_part">
+        <!-- heading -->
+        <h1>
+          <!-- the big part -->
+          <span class="Home_h1_big">NEATSHIRT</span>
+          <!-- the small part -->
+          <span class="Home_h1_small">THE UNIVERSE IN DESIGNS</span>
+        </h1>
+      </div>
+      <!-- end top part -->
+
+      <!-- bottom part -->
+      <div class="Home_bottom_part">
+        <!-- the question -->
+        <h2 class="Home_h2_question">WHAT ARE YOU?</h2>
+        <!-- container of sections -->
+        <div class="Home_bottom_sections_container">
+          <!-- right section -->
+          <div class="Home_bm_right">
+            <!-- right side informations -->
+            <h3 class="Home_type">Customer</h3>
+            <p class="Home_details">
+              I can <span class="Home_green">buy</span> and
+              <span class="Home_green">Download</span> any Design I want from a
+              remarkable collections and print it on a tshirt and show myself to
+              the world through My style.
+            </p>
+            <a href="/market" class="Home_market_btn">Go to Market</a>
+          </div>
+          <!-- left section -->
+          <div class="Home_bm_left">
+            <!-- right side informations -->
+            <h3 class="Home_type">Designer</h3>
+            <p class="Home_details">
+              I can <span class="Home_green">put the universe</span> in an
+              <span class="Home_green">Image</span> using some Tools Like
+              (Photoshop- Illustrator-Gimp-etc...) just upload your artwork and
+              publish it and we sell it for you.
+            </p>
+            <a href="/login" class="Home_dashboard_btn">I'm In</a>
+          </div>
+        </div>
+      </div>
+      <!-- bottom part -->
+    </div>
+    <!-- End container -->
+    <%-include ('./includes/end.ejs')%>
+  </body>
+</html>
